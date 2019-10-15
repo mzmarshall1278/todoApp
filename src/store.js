@@ -15,10 +15,12 @@ export default new Vuex.Store({
     addTodo (state, payload) {
       return state.lists.push({ number: state.lists.length + 1, text: payload })
     }
+
   },
   actions: {
     addTodo ({ commit }, payload) {
       commit('addTodo', payload)
     }
+
   }
 })
