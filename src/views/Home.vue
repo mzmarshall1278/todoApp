@@ -2,6 +2,7 @@
   <div class="mt-2 pt-5">
 
 <b-list-group >
+  <p>double click to remove a todo</p>
   <b-list-group-item  v-for="(list, key) in theList"  :key="key" @dblclick="remove(list.number)">{{list.text}}</b-list-group-item>
 
 </b-list-group>
