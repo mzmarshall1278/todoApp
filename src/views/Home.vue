@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="mt-2 pt-5">
+
+<b-list-group>
+  <b-list-group-item v-for="(list, key) in lists" :key="key" @dblclick="remove(list.number)">{{list.text}}</b-list-group-item>
+
+</b-list-group>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
+  computed: {
+    lists () {
+      return this.$store.state.lists
+    }
+  },
+  methods: {
+    remove (id) {
+      this.$store.dispatch('remove', id)
+    }
   }
+
 }
 </script>
