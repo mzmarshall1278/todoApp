@@ -23,6 +23,8 @@ export default {
   methods: {
     addTodo () {
       this.$store.dispatch('addTodo', this.todo)
+      this.todo = ''
+      this.$router.push('/')
     }
   }
 }
